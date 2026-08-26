@@ -1,0 +1,22 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.myolaris.com/llms.txt
+limit_count: 0
+note: 'No published rate limits. Olaris documents no API, so there are no documented
+  limits to record. The one callable endpoint on the provider''s host — the Wix Site
+  MCP at https://www.myolaris.com/_api/mcp — publishes no rate-limit policy and returned
+  no RateLimit-* or X-RateLimit-* response headers on the anonymous tools/list call
+  observed on 2026-08-26. Wix platform edge limits presumably apply but are neither
+  documented by Olaris nor surfaced in headers, so nothing is asserted here.'
+limits: []
+response_headers:
+  observed: []
+  note: Response headers on the tools/list 200 were content-type, mcp-session-id,
+    etag, pragma, cache-control, x-wix-request-id, set-cookie, x-robots-tag, server,
+    x-content-type-options, accept-ranges, date, x-served-by, x-cache, vary, strict-transport-security,
+    x-seen-by, content-length, via, alt-svc. No rate-limit signalling header of any
+    family was present, and no Retry-After.
+evidence:
+- url: https://www.myolaris.com/_api/mcp
+  status: 200
+  finding: no rate-limit headers on an anonymous POST tools/list

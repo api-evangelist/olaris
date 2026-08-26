@@ -64,5 +64,10 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Olaris is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Olaris, Inc. is a precision-medicine diagnostics company in Framingham, Massachusetts, founded in 2014, that combines metabolomics with machine learning to produce clinical biomarkers of response. Its lead product, myOLARIS-KTdx, is a non-invasive urine test for surveillance of kidney graft injury in transplant recipients, run in the company's own CLIA-certified laboratory and distributed through a commercial collaboration with Labcorp.
+
+Olaris publishes no public developer program, API reference, or machine-readable API contract. The only machine-readable surfaces on a host it controls are a platform-generated `llms.txt` and an unauthenticated Wix Site MCP endpoint, both captured in this repository and both marked as platform-provided rather than first-party.
+
+- https://www.myolaris.com/
+- https://www.myolaris.com/llms.txt
+- https://www.myolaris.com/_api/mcp

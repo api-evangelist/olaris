@@ -1,0 +1,19 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.myolaris.com/
+plan_count: 0
+note: 'Olaris publishes no pricing or plans page of any kind. Its site is a ten-page
+  Wix marketing site (sitemap enumerated in full at https://www.myolaris.com/pages-sitemap.xml)
+  with no pricing, plans, sign-up or checkout surface. This is expected for the business
+  model: myOLARIS-KTdx is a physician-ordered laboratory developed test billed through
+  clinical-diagnostics channels and distributed via a Labcorp commercial collaboration,
+  and the biomarker-services line is a contact-us biopharma engagement. There is no
+  developer plan because there is no public API.'
+plans: []
+evidence:
+- url: https://www.myolaris.com/pages-sitemap.xml
+  status: 200
+  finding: ten pages, none of them pricing or plans
+- url: https://www.myolaris.com/biomarker-services
+  status: 200
+  finding: contact-driven services page, no published rates

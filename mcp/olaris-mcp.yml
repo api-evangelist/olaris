@@ -1,0 +1,105 @@
+generated: '2026-08-26'
+method: probed
+source: https://www.myolaris.com/_api/mcp
+status: published
+discovery:
+  advertised_in: https://www.myolaris.com/llms.txt
+  note: Olaris' llms.txt carries an "AI Agent Access" section that names the endpoint
+    and states no authentication is required.
+deployment:
+  mode: remote
+  endpoint: https://www.myolaris.com/_api/mcp
+  auth: none
+  verified: probed
+server:
+  name: Olaris Site MCP
+  transport: http
+  url: https://www.myolaris.com/_api/mcp
+  platform: Wix Site MCP
+  first_party: false
+  platform_docs: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
+provenance_note: 'This endpoint is served from a host Olaris controls (www.myolaris.com)
+  and its tool descriptions name site "Olaris" explicitly, but it is provisioned by
+  the Wix website platform rather than built by Olaris. It exposes public marketing-site
+  content and the generic Wix REST API surface only. It does NOT expose myOLARIS-KTdx
+  test ordering, laboratory results, patient data, or any clinical system. Recorded
+  as a real agent surface on the provider''s host, explicitly marked first_party:
+  false so it is never read as an Olaris product API.'
+tools:
+- name: GetBusinessDetails
+  description: Get business and site details for site "Olaris" — timezone, email,
+    phone, address.
+  parameters: []
+- name: SearchInSite
+  description: Search the site "Olaris" for information.
+  parameters:
+  - searchTerm
+  required:
+  - searchTerm
+- name: SearchSiteApiDocs
+  description: Search the API documentation for the Wix business solutions installed
+    on site "Olaris".
+  parameters:
+  - searchTerm
+  required:
+  - searchTerm
+- name: GenerateVisitorToken
+  description: Create a new visitor session and obtain a visitor access token for
+    site "Olaris".
+  parameters: []
+- name: CallWixSiteAPI
+  description: Call APIs on site "Olaris" to perform an action on a visitor's behalf.
+  parameters:
+  - visitorToken
+  - url
+  - method
+  - body
+  required:
+  - visitorToken
+  - url
+  - method
+- name: ExecuteWixAPI
+  description: Run JavaScript against the Wix REST API on site "Olaris".
+  parameters:
+  - code
+  - reason
+  - hasMutations
+  - sourceDocUrls
+  - visitorToken
+  required:
+  - code
+  - reason
+  - hasMutations
+  - sourceDocUrls
+  - visitorToken
+- name: BrowseWixRESTDocsMenu
+  description: Browse the Wix REST API documentation menu hierarchy.
+  parameters:
+  - menuUrl
+  - reason
+  required:
+  - reason
+- name: ReadFullDocsArticle
+  description: Fetch the full Wix docs article or method article with code examples.
+  parameters:
+  - articleUrl
+  required:
+  - articleUrl
+- name: ReadFullDocsMethodSchema
+  description: Fetch the full request/response schema for a given Wix API method.
+  parameters:
+  - articleUrl
+  - reason
+  required:
+  - articleUrl
+  - reason
+tool_count: 9
+raw_tools_list: mcp/olaris-mcp-tools-list.json
+x-evidence:
+  fetched: '2026-08-26'
+  url: https://www.myolaris.com/_api/mcp
+  method: POST
+  request: '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+  http_status: 200
+  content_type: application/json; charset=utf-8
+  authenticated: false

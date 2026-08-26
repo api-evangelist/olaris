@@ -1,18 +1,50 @@
 aid: olaris
 name: Olaris
-description: 'Olaris is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Olaris, Inc. is a precision-medicine diagnostics company in Framingham,
+  Massachusetts, founded in 2014 by Elizabeth O''Day, that combines mass-spectrometry
+  and NMR metabolomics with machine learning to turn metabolite signatures into clinical
+  biomarkers of response. Its lead product, myOLARIS-KTdx, is a non-invasive urine
+  test for surveillance of kidney graft injury in transplant recipients — including
+  borderline, subclinical and clinical rejection and polyomavirus-associated nephropathy
+  — run in the company''s own CLIA-certified laboratory and distributed through a
+  commercial collaboration with Labcorp. Olaris also sells biomarker discovery services
+  to biopharma and is advancing a diagnostics pipeline across oncology, solid-organ
+  transplant and neurodegeneration. Olaris publishes no public developer program,
+  API reference or machine-readable API contract; its only machine-readable surfaces
+  are the platform-generated llms.txt and Wix Site MCP endpoint served from its own
+  marketing host.'
+image: https://static.wixstatic.com/media/e0d525_f21b71a783bf417e951f6808527da944~mv2.png
 url: https://raw.githubusercontent.com/api-evangelist/olaris/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
-apis: []
+- Health Care
+- Diagnostics
+- Precision Medicine
+- Metabolomics
+- Machine Learning
+- Biomarkers
+- Laboratory
+- Transplant
+- Life Sciences
+apis:
+- name: Olaris Site MCP
+  description: 'Unauthenticated remote Model Context Protocol endpoint served from
+    Olaris'' own host at https://www.myolaris.com/_api/mcp. It is the Wix platform
+    Site MCP — provisioned by the website platform, not a first-party Olaris product
+    API — and a tools/list call returns nine tools scoped to site "Olaris" covering
+    business details, site search, Wix REST API documentation lookup, visitor-token
+    issuance and generic Wix site API invocation. It exposes only public site content;
+    it does not expose myOLARIS test ordering, results, or any laboratory data.'
+  humanURL: https://www.myolaris.com/llms.txt
+  baseURL: https://www.myolaris.com/_api/mcp
+  tags:
+  - MCP
+  - Agent
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +52,41 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.myolaris.com/
+- type: MCPServer
+  url: mcp/olaris-mcp.yml
+- type: LLMsTxt
+  url: llms/olaris-llms.txt
+- type: Authentication
+  url: authentication/olaris-authentication.yml
+- type: Support
+  url: https://www.myolaris.com/contact
+- type: LinkedIn
+  url: https://www.linkedin.com/company/olarisbor
+- type: DomainSecurity
+  url: security/olaris-domain-security.yml
+- type: Plans
+  url: plans/olaris-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/olaris-rate-limits.yml
+x-enrichment:
+  date: '2026-08-26'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1
+x-coverage:
+  state: covered
+  reason: no-developer-program
+  detail: Olaris ships no public API, developer portal or machine-readable contract;
+    the only machine surfaces on its own host are a platform-generated llms.txt and
+    an unauthenticated Wix Site MCP endpoint, both of which were fetched and saved.
+  evidence:
+  - url: https://www.myolaris.com/llms.txt
+    status: 200
+  - url: https://www.myolaris.com/_api/mcp
+    status: 200
+  - url: https://www.myolaris.com/openapi.json
+    status: 400
+  - url: https://www.myolaris.com/developers
+    status: 404
+  checked: '2026-08-26'

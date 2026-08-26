@@ -1,0 +1,40 @@
+generated: '2026-08-26'
+method: probed
+source: live probes of every host in apis.yml (www.myolaris.com)
+note: 'Every /.well-known/ path probed on www.myolaris.com returned a non-2xx. The
+  host is Wix-hosted and answers 400 with a ~2.2KB HTML error shell for any path under
+  /.well-known/ and 404 with a near-identical shell for unknown top-level paths —
+  i.e. it serves no discovery documents at all. Nothing was saved and NO WellKnown
+  or SecurityTxt pointer is emitted; this file records a measured absence.'
+hit_count: 0
+hosts:
+- host: https://www.myolaris.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 400
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 400
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 400
+    file: null
+  - path: /.well-known/api-catalog
+    status: 400
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 400
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 400
+    file: null
+  - path: /.well-known/agent.json
+    status: 400
+    file: null
+soft_404_control:
+  note: Wix returns an HTML error shell, not a document, for every probed path. Body
+    sizes were 2201-2205 bytes across all seven /.well-known/ probes and the /api,
+    /docs, /developers control probes, confirming a single templated error page rather
+    than served content.
+  bytes: 2202
+  content_type: text/html; charset=UTF-8
