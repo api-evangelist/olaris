@@ -51,7 +51,7 @@ tags:
 - Diagnostics
 - Precision Medicine
 - Metabolomics
-- Machine-Learning
+- Machine Learning
 - Biomarkers
 - Laboratory
 - Transplant
@@ -67,6 +67,7 @@ tags_raw:
 - Laboratory
 - Transplant
 - Life Sciences
+- Machine-Learning
 apis:
 - name: Olaris Site MCP
   description: 'Unauthenticated remote Model Context Protocol endpoint served from
@@ -84,6 +85,9 @@ apis:
   tags_raw:
   - MCP
   - Agent
+  x-surface: platform-generated
+  x-platform: wix
+  x-platform-surface: site-mcp
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
